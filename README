@@ -1,18 +1,20 @@
-Hogget. A function standard library for Swift.
+Hogget. A functional standard library for Swift.
 
 ## Motivation
 
 Finally with Swift, Cocoa developers have access to a language with parametric polymorphism, ADTs, and tuples.
 
-Hogget implements 
+Hogget implements many functions from the Haskell standard library, among others. Our aim is to implement every combinator known to man.
 
 ## Contributing
 
-There are a few style guides.
+There are a few rules:
 
 1. Functions in Hogget take arguments in SVO order. e.g. map() is map(List, Function), not map(Function, List). This is ordering is required by Swift for call-lambda syntax to work.
 
 2. Hogget is split into *libraries*, such as the Array library. Each function occupies its own *file*, which contains: a) implementation, b) documentation, c) testing, d) benchmarking. The functions in each library are assembled into one swift file by `gen.py` which is run on a pre-commit hook.
+
+3. Hogget is mainly concerned with pure functions and data structures. UI is considered to be out of scope, and as such, there must be no dependency on UIKit or AppKit.
 
 ## License
 
